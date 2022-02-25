@@ -3,10 +3,11 @@ body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 
 .bgimg {
-  background-image: url('comeing_soon_photo/49744439006_7c205b5a32_o.jpg');
+  background-image: url('comeing_soon_photo/51068668266_2e60842a07_o.jpg');
   min-height: 100%;
   background-position: center;
   background-size: cover;
+  
 }
 
 #rcorners3 {
@@ -36,4 +37,19 @@ body, html {height: 100%}
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;  
+}
+
+
+.parallax {
+  /* The image used */
+  background-image: url("comeing_soon_photo/49744439006_7c205b5a32_o.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
