@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="script" href="https://" >
+    <script src="jquery-csv.js"></script>
     <script>
 
     $(document).ready(function () {
         $.ajax({
             type: "GET",
-            url: "file://csv_data_portfolio.csv",
+            url: "https://magicbarrel7887.github.io/Portfolio/csv_data_portfolio.csv",
             dataType: "text",
             success: function (data) { processData(data); }
         });
@@ -24,22 +25,8 @@
 
 
     function processData(allText) {
-            var allTextLines = allText.split(/\r\n|\n/);
-            var headers = allTextLines[0].split(',');
-            var lines = [];
-
-            for (var i = 1; i < allTextLines.length; i++) {
-                var data = allTextLines[i].split(',');
-                if (data.length == headers.length) {
-
-                    var tarr = [];
-                    for (var j = 0; j < headers.length; j++) {
-                        tarr.push(headers[j] + ":" + data[j]);
-                    }
-                    lines.push(tarr);
-                }
-            }
-            // alert(lines);
+        const data = $.csv.toObjects(allText);
+             console.log(JSON.stringify(allText, null, 2));
         }
 
                  window.onload = function () {
