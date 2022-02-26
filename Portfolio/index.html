@@ -13,26 +13,35 @@
     <link rel="script" href="https://" >
     <script>
 
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "file://csv_data_portfolio.csv",
+            dataType: "text",
+            success: function (data) { processData(data); }
+        });
+    });
 
-        var json
-        var json_parse
 
-        $.getJSON('https://magicbarrel7887.github.io/Portfolio/json_data_portfolio.json',
-                function (err, data) {
-                    if (err !== null) {
-                        // alert('Something went wrong: ' + err);
-                        console.log('Something went wrong: ' + err)
-                        console.log(JSON.stringify())
-                       json = data;
-                       json_parse = JSON.parse(json); 
-                       console.log(JSON.stringify(json))
-                    } else {
-                        alert('Your query count: ' + data.query.count);
-                        console.log('Your query count: ' + data.query.count)
+    function processData(allText) {
+            var allTextLines = allText.split(/\r\n|\n/);
+            var headers = allTextLines[0].split(',');
+            var lines = [];
+
+            for (var i = 1; i < allTextLines.length; i++) {
+                var data = allTextLines[i].split(',');
+                if (data.length == headers.length) {
+
+                    var tarr = [];
+                    for (var j = 0; j < headers.length; j++) {
+                        tarr.push(headers[j] + ":" + data[j]);
                     }
-                });
-                 
-                
+                    lines.push(tarr);
+                }
+            }
+            // alert(lines);
+        }
+
                  window.onload = function () {
                         what();
                         function what() {
