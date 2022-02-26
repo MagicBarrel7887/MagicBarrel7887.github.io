@@ -12,14 +12,44 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link rel="script" href="https://" >
     <script>
-        $(document).ready(function () {
-            $.getJSON("file:///json_data_portfolio.json", function (data) {
-                console.log(data.header); // Prints: Harry
-                console.log(data.page_ID); // Prints: 14
-            }).fail(function () {
-                console.log("An error has occurred.");
-            });
+
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "file://csv_data_portfolio.csv",
+            dataType: "text",
+            success: function (data) { processData(data); }
         });
+    });
+
+
+    function processData(allText) {
+            var allTextLines = allText.split(/\r\n|\n/);
+            var headers = allTextLines[0].split(',');
+            var lines = [];
+
+            for (var i = 1; i < allTextLines.length; i++) {
+                var data = allTextLines[i].split(',');
+                if (data.length == headers.length) {
+
+                    var tarr = [];
+                    for (var j = 0; j < headers.length; j++) {
+                        tarr.push(headers[j] + ":" + data[j]);
+                    }
+                    lines.push(tarr);
+                }
+            }
+            // alert(lines);
+        }
+
+                 window.onload = function () {
+                        what();
+                        function what() {
+                                document.getElementById("header1").innerHTML = "Hello World!";
+                        };
+                    }
+
+
 </script>
 </head>
 
@@ -84,10 +114,10 @@
         <!-- First Photo Grid-->
         <div class="w3-row-padding">
             <div class="w3-third w3-container w3-margin-bottom">
-                <img src="/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                <img id="Photo1" src="/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
                 <div class="w3-container w3-white">
-                    <p><b>Lorem Ipsum</b></p>
-                    <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae,
+                    <p id="header1"></p>
+                    <p id="discripingi">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae,
                         ultricies congue gravida diam non fringilla.</p>
                 </div>
             </div>
