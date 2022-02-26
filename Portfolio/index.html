@@ -14,14 +14,32 @@
     <script>
 
 
+        var json
+        var json_parse
+
         $.getJSON('https://magicbarrel7887.github.io/Portfolio/json_data_portfolio.json',
                 function (err, data) {
                     if (err !== null) {
-                        alert('Something went wrong: ' + err);
+                        // alert('Something went wrong: ' + err);
+                        console.log('Something went wrong: ' + err)
+                        console.log(JSON.stringify())
+                       json = data;
+                       json_parse = JSON.parse(json); 
+                       console.log(JSON.stringify(json))
                     } else {
                         alert('Your query count: ' + data.query.count);
+                        console.log('Your query count: ' + data.query.count)
                     }
                 });
+                 
+                
+                 window.onload = function () {
+                        what();
+                        function what() {
+                                document.getElementById("header1").innerHTML = "Hello World!";
+                        };
+                    }
+
 
 </script>
 </head>
@@ -87,10 +105,10 @@
         <!-- First Photo Grid-->
         <div class="w3-row-padding">
             <div class="w3-third w3-container w3-margin-bottom">
-                <img src="/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                <img id="Photo1" src="/w3images/mountains.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
                 <div class="w3-container w3-white">
-                    <p><b>Lorem Ipsum</b></p>
-                    <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae,
+                    <p id="header1"></p>
+                    <p id="discripingi">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae,
                         ultricies congue gravida diam non fringilla.</p>
                 </div>
             </div>
