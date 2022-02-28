@@ -2,13 +2,24 @@
 console.log('jQuery Loading Local JSON File')
 
 
-var form = document.querySelector("form");
-document.getElementById(formexe);
 
-console.log(form)
+function sendEmail(){
+    var email;
+    var message;
+    var name;
 
-form.addEventListener("submit", function (event) {
-    console.log("Saving value", form.elements.value.value);
-    event.preventDefault();
-});
-//window.open('mailto:o8mfrk48k@mozmail.com?subject=Name&body=MessageMessage');
+    var form = document.querySelector("form");
+    // console.log(form.elements[1].value);
+    // // → password
+    // console.log(form.elements.Message.value);
+    // console.log(form.elements.Email.value);
+    // // → password
+    // console.log(form.elements.Message.form == form);
+  // → true
+    message = form.elements.Message.value + "   ";
+
+    name = form.elements.Name.value;
+    
+    console.log(email);
+  window.open('mailto:o8mfrk48k@mozmail.com?subject=' + name +'&body=' + message);
+}
