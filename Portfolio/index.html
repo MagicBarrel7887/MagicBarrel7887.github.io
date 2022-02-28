@@ -10,47 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link rel="script" href="https://" >
-    <script>
-
-    $(document).ready(function () {
-        $.ajax({
-            type: "GET",
-            url: "file://csv_data_portfolio.csv",
-            dataType: "text",
-            success: function (data) { processData(data); }
-        });
-    });
 
 
-    function processData(allText) {
-            var allTextLines = allText.split(/\r\n|\n/);
-            var headers = allTextLines[0].split(',');
-            var lines = [];
-
-            for (var i = 1; i < allTextLines.length; i++) {
-                var data = allTextLines[i].split(',');
-                if (data.length == headers.length) {
-
-                    var tarr = [];
-                    for (var j = 0; j < headers.length; j++) {
-                        tarr.push(headers[j] + ":" + data[j]);
-                    }
-                    lines.push(tarr);
-                }
-            }
-            // alert(lines);
-        }
-
-                 window.onload = function () {
-                        what();
-                        function what() {
-                                document.getElementById("header1").innerHTML = "Hello World!";
-                        };
-                    }
-
-
-</script>
 </head>
 
 <body class="w3-light-grey w3-content" style="max-width:1600px">
@@ -142,11 +103,10 @@
         <!-- Second Photo Grid-->
         <div class="w3-row-padding">
             <div class="w3-third w3-container w3-margin-bottom">
-                <img src="https://lh3.googleusercontent.com/pw/AM-JKLV7VcOKPKH_qwXl5wWYTGRFDQ57V0124H9sfUttmRnhp3WWBML6d355h3nkHRg9jiiJHpLtJcw67-lfwR8KW9H18QuTeqHxxIFc0ydyY4MEKYQdnWm2gbg-hQF6OzdK3KlAh4ItDqfBTtQkMtt2xZW_=w640-h480-no?authuser=0" alt="Norway" style="width:100%" class="w3-hover-opacity">
+                <img src="https://lh3.googleusercontent.com/pw/AM-JKLV7VcOKPKH_qwXl5wWYTGRFDQ57V0124H9sfUttmRnhp3WWBML6d355h3nkHRg9jiiJHpLtJcw67-lfwR8KW9H18QuTeqHxxIFc0ydyY4MEKYQdnWm2gbg-hQF6OzdK3KlAh4ItDqfBTtQkMtt2xZW_=w640-h480-no?authuser=0" alt="916 game lab" style="width:100%" class="w3-hover-opacity">
                 <div class="w3-container w3-white">
                     <p><b>916 game lab</b></p>
-                    <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae,
-                        ultricies congue gravida diam non fringilla.</p>
+                    <p>a lab project</p>
                 </div>
             </div>
             <div class="w3-third w3-container w3-margin-bottom">
@@ -201,7 +161,7 @@
 
             <h4>Technical Skills</h4>
             <!-- Progress bars / Skills -->
-            <p>Photography</p>
+            <p>programming</p>
             <div class="w3-grey">
                 <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">95%</div>
             </div>
@@ -209,9 +169,13 @@
             <div class="w3-grey">
                 <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:85%">85%</div>
             </div>
-            <p>Photoshop</p>
+            <p>3d animation </p>
             <div class="w3-grey">
                 <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:80%">80%</div>
+            </div>
+            <p>3d animation rendering</p>
+            <div class="w3-grey">
+                <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:84%">84%</div>
             </div>
             <!-- <p>
                 <button class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom">
@@ -294,7 +258,7 @@
                 </div>
             </div>
             <hr class="w3-opacity">
-            <form action="/action_page.php" target="_blank" method="post">
+            <form action="action_page.php" target="_blank" method="post">
                 <div class="w3-section">
                     <label>Name</label>
                     <input class="w3-input w3-border" type="text" name="Name" required>
