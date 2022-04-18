@@ -23,3 +23,8 @@ function sendEmail(){
     console.log(email);
   window.open('mailto:o8mfrk48k@mozmail.com?subject=' + name +'&body=' + message);
 }
+
+$(window).load(function () {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+});
