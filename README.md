@@ -23,7 +23,7 @@ Contributors names and contact info
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the [AGPL-3.0 License] License - see the LICENSE.md file for details
 
 ## Acknowledgments
 

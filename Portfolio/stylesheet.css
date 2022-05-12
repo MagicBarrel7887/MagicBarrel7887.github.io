@@ -37,3 +37,7 @@ body, html {height: 100%}
     -o-border-radius: 50%;
     border-radius: 50%;  
 }
+.text_color {
+    color: black;
+    
+}
