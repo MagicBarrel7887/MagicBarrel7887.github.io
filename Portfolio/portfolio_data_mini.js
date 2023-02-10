@@ -1,0 +1,1 @@
+console.log("jQuery Loading Local JSON File");function sendEmail(){var e,o,l,a=document.querySelector("form");o=a.elements.Message.value+"   ",l=a.elements.Name.value,console.log(e),window.open("mailto:o8mfrk48k@mozmail.com?subject="+l+"&body="+o)}
