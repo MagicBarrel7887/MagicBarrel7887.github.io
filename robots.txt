@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /hobbies
+
+
+Sitemap: sitemap.xml
